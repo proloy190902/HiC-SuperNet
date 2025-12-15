@@ -7,6 +7,9 @@ This research proposes HiC-SuperNet, a novel deep learning architecture for enha
 2. Dual Attention Mechanism combining channel and spatial attention for better feature selection and localization.
 3. Biologically Informed Multi-Component Loss Function incorporating MSE, MAE, Pearson correlation, and SSIM for structural preservation
 
+# Architecture Pipeline
+![Result Image](https://github.com/proloy190902/HiC-SuperNet/blob/5c428b4721c0879e3f39ec5cebc66621281d6163/HiC-SuperNet%20Architecture.png)
+
 # 📂 Dataset
 This work uses data from the DiCARN-DNase project.
 
