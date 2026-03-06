@@ -89,8 +89,8 @@ HiC-SuperNet/
 ├── model.py          # Architecture: HiCSuperNetGenerator, MSD blocks, Dual Attention
 ├── losses.py         # Multi-component loss & evaluation metrics (SSIM, PSNR, PCC, MSE, MAE)
 ├── data_utils.py     # Data loading, normalization, tf.data.Dataset factory
-├── train.py          # Training script (CLI)
-├── test.py           # Testing / inference script (CLI)
+├── train.py          # Training script
+├── test.py           # Testing
 ├── requirements.txt  # Python dependencies
 └── README.md 
 ```
