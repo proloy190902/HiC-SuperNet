@@ -113,13 +113,17 @@ python train.py \
 
 ## Output
 
+## Output
+
+```
 checkpoints_hicsupernet/
-├──best_model.weights.h5 # Best validation checkpoint
-├── final_model.weights.h5 # Weights at end of training
-├── epoch_XXXX.weights.h5 # Periodic snapshots (every 10 epochs)
-├── training_history.npz # Loss and metric arrays
-├── training_history.png # Loss / SSIM / PSNR curves
-└── predictions_sample.png # Visual comparison grid
+├── best_model.weights.h5        # Best validation checkpoint
+├── final_model.weights.h5       # Weights at end of training
+├── epoch_XXXX.weights.h5        # Periodic snapshots (every 10 epochs)
+├── training_history.npz         # Loss and metric arrays
+├── training_history.png         # Loss / SSIM / PSNR curves
+└── predictions_sample.png       # Visual comparison grid
+```
 
 # Testing
 python test.py \
