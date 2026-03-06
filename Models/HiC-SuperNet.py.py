@@ -1,9 +1,3 @@
-"""
-HiC-SuperNet Model Architecture
-=================================
-Multi-Scale Dilated Residual Network with Dual Attention
-for Hi-C contact map enhancement.
-"""
 
 import tensorflow as tf
 from tensorflow import keras
