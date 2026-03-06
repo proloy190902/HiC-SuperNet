@@ -77,7 +77,60 @@ Arguments:
 
 `-c`: Specify the cell line name again.
 
+
 Note: To proceed with training, ensure that both training and validation files are present in $root_dir/data. Adjust the -s option to produce validation and additional required datasets.
 ### Congratulations! Your datasets are now ready.
 # Note: 
 For training, you must have both training and validation files present in $root_dir/data. Change the option -s to generate the validation and other datasets needed
+
+
+HiC-SuperNet/
+├── model.py          # Architecture: HiCSuperNetGenerator, MSD blocks, Dual Attention
+├── losses.py         # Multi-component loss & evaluation metrics (SSIM, PSNR, PCC, MSE, MAE)
+├── data_utils.py     # Data loading, normalization, tf.data.Dataset factory
+├── train.py          # Training script (CLI)
+├── test.py           # Testing / inference script (CLI)
+├── requirements.txt  # Python dependencies
+└── README.md
+
+# Installation
+git clone https://github.com/proloy190902/HiC-SuperNet.git
+cd HiC-SuperNet
+pip install -r requirements.txt
+
+# Training
+python train.py \
+    --train  
+    --valid  
+    --test   
+    --epochs 100 \
+    --batch_size 16 \
+    --lr 0.001 \
+    --base_filters 64 \
+    --num_blocks 8 \
+    --patience 15 \
+    --checkpoint_dir checkpoints_hicsupernet
+
+# Output
+checkpoints_hicsupernet/
+├── best_model.weights.h5        # Best validation checkpoint
+├── final_model.weights.h5       # Weights at end of training
+├── epoch_XXXX.weights.h5        # Periodic snapshots (every 10 epochs)
+├── training_history.npz         # Loss and metric arrays
+├── training_history.png         # Loss / SSIM / PSNR curves
+└── predictions_sample.png       # Visual comparison grid
+
+# Testing
+python test.py \
+    --weights checkpoints_hicsupernet/best_model.weights.h5 \
+    --test    
+    --output  results/
+
+# Outputs (evaluation mode)
+results/
+├── test_metrics.txt          # SSIM, PSNR, MSE, MAE, PCC
+├── comparison_grid.png       # Input / Predicted / GT side-by-side
+├── difference_maps.png       # |Predicted − GT| heat-maps
+├── metric_distributions.png  # Per-sample SSIM & PCC histograms
+└── predictions.npz           # predictions, targets, inputs arrays
+    
