@@ -111,7 +111,7 @@ python train.py \
     --patience 15 \
     --checkpoint_dir checkpoints_hicsupernet
 
-## Output
+
 
 ## Output
 
@@ -126,16 +126,19 @@ checkpoints_hicsupernet/
 ```
 
 # Testing
+```
 python test.py \
     --weights checkpoints_hicsupernet/best_model.weights.h5 \
     --test    
     --output  results/
+```
 
 # Outputs (evaluation mode)
+```
 results/
 ├── test_metrics.txt          # SSIM, PSNR, MSE, MAE, PCC
 ├── comparison_grid.png       # Input / Predicted / GT side-by-side
 ├── difference_maps.png       # |Predicted − GT| heat-maps
 ├── metric_distributions.png  # Per-sample SSIM & PCC histograms
 └── predictions.npz           # predictions, targets, inputs arrays
-    
+``` 
