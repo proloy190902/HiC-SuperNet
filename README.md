@@ -84,21 +84,27 @@ Note: To proceed with training, ensure that both training and validation files a
 For training, you must have both training and validation files present in $root_dir/data. Change the option -s to generate the validation and other datasets needed
 
 ## Repository Structure
-- **model.py** – Defines the HiCSuperNetGenerator model including Multi-Scale Dense blocks and Dual Attention modules.  
-- **losses.py** – Contains custom loss functions and evaluation metrics such as SSIM, PSNR, PCC, MSE, and MAE.  
-- **data_utils.py** – Handles dataset loading, preprocessing, normalization, and creation of TensorFlow datasets.  
-- **train.py** – Command-line script for training the model.  
-- **test.py** – Command-line script for model evaluation and inference.  
-- **requirements.txt** – Lists all required Python packages.  
-
+```
+HiC-SuperNet/
+├── model.py          # Architecture: HiCSuperNetGenerator, MSD blocks, Dual Attention
+├── losses.py         # Multi-component loss & evaluation metrics (SSIM, PSNR, PCC, MSE, MAE)
+├── data_utils.py     # Data loading, normalization, tf.data.Dataset factory
+├── train.py          # Training script (CLI)
+├── test.py           # Testing / inference script (CLI)
+├── requirements.txt  # Python dependencies
+└── README.md 
+```
 
 
 ## Installation
+```
 git clone https://github.com/proloy190902/HiC-SuperNet.git
 cd HiC-SuperNet
 pip install -r requirements.txt
+```
 
 # Training
+```
 python train.py \
     --train  
     --valid  
@@ -110,7 +116,7 @@ python train.py \
     --num_blocks 8 \
     --patience 15 \
     --checkpoint_dir checkpoints_hicsupernet
-
+```
 
 
 ## Output
