@@ -138,7 +138,7 @@ python test.py \
 ```
 results/
 ├── test_metrics.txt          # SSIM, PSNR, MSE, MAE, PCC
-├── comparison_grid.png       # Input / Predicted / GT side-by-side
+├── comparison_grid.png       # Input / Predicted / GT
 ├── difference_maps.png       # |Predicted − GT| heat-maps
 ├── metric_distributions.png  # Per-sample SSIM & PCC histograms
 └── predictions.npz           # predictions, targets, inputs arrays
