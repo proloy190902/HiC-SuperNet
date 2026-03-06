@@ -92,7 +92,8 @@ For training, you must have both training and validation files present in $root_
 - **requirements.txt** – Lists all required Python packages.  
 
 
-# Installation
+
+## Installation
 git clone https://github.com/proloy190902/HiC-SuperNet.git
 cd HiC-SuperNet
 pip install -r requirements.txt
